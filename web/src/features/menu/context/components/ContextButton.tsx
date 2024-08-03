@@ -21,20 +21,21 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   label: {
     width: '100%',
-    color: params.disabled ? 'lightgray' : "white",
+    color: params.disabled ? 'white' : "white",
     whiteSpace: 'pre-wrap',
   },
   button: {
     height: 'fit-content',
     width: '100%',
     padding: 10,
-    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',  --old 
+    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', 
     background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)',
     border: '1px solid lightgray',
     borderRadius: '5px',
     minHeight: '60px',
     '&:hover': {
       backgroundColor: 'black',
+      background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
       cursor: params.readOnly ? 'unset' : 'pointer',
        border: '1px solid rgb(56, 162, 229)'
     },
@@ -44,14 +45,14 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   disabled: {
     backgroundColor: 'black',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)',
+    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
     border: '1px solid rgb(56, 162, 229)',
   },
   iconImage: {
     maxWidth: '25px',
   },
   description: {
-    color: "lightgray",
+    color: "white",
     fontSize: 12,
   },
   dropdown: {
@@ -157,7 +158,7 @@ const ContextButton: React.FC<{
                   </Text>
                 )}
                 {button.progress !== undefined && (
-                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'dark.3'} />
+                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'blue'} />
                 )}
               </Stack>
               {(button.menu || button.arrow) && button.arrow !== false && (
@@ -185,7 +186,7 @@ const ContextButton: React.FC<{
                     <Progress
                       value={metadata.progress}
                       size="sm"
-                      color={metadata.colorScheme || button.colorScheme || 'dark.3'}
+                      color={metadata.colorScheme || button.colorScheme || 'white'}
                     />
                   )}
                 </>
