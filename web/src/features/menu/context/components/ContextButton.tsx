@@ -28,7 +28,8 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     height: 'fit-content',
     width: '100%',
     padding: 10,
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
+    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',  --old 
+    background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)',
     border: '1px solid lightgray',
     borderRadius: '5px',
     minHeight: '60px',
@@ -120,7 +121,7 @@ const ContextButton: React.FC<{
             disabled={button.disabled}
             style={{
               background: button.disabled
-                ? 'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)'
+                ? 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)'
                 : undefined,
               //border: button.disabled ? '1px solid #f72f49' : undefined,
               backgroundColor: button.disabled ? 'black' : undefined,

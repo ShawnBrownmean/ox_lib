@@ -4,9 +4,10 @@ import React from 'react';
 const useStyles = createStyles((theme) => ({
   container: {
     textAlign: 'center',
-    borderTopLeftRadius: theme.radius.md,
-    borderTopRightRadius: theme.radius.md,
-    backgroundColor: theme.colors.dark[6],
+    borderTopLeftRadius: theme.radius.lg,
+    borderTopRightRadius: theme.radius.lg,
+    background: "radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)",
+    backgroundColor: 'transparent',
     height: 60,
     width: 384,
     display: 'flex',
@@ -14,8 +15,9 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
   },
   heading: {
-    fontSize: 24,
+    fontSize: 20,
     textTransform: 'uppercase',
+    color: "white",
     fontWeight: 500,
   },
 }));

@@ -6,12 +6,12 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
   },
   input: {
-    backgroundColor: theme.colors.dark[7],
-    '&:checked': { backgroundColor: theme.colors.dark[2], borderColor: theme.colors.dark[2] },
+    backgroundColor: 'lightgray',
+    '&:checked': { backgroundColor: 'linear-gradient(90deg, rgba(56, 162, 229,0) 0%,  rgba(24, 72, 102, 1) 90%)' },
   },
   inner: {
     '> svg > path': {
-      fill: theme.colors.dark[6],
+      fill: 'white',
     },
   },
 }));

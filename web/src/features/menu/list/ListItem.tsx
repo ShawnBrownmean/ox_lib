@@ -15,7 +15,7 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: theme.colors.dark[5],
     borderRadius: theme.radius.md,
     padding: 2,
     height: 60,
@@ -24,6 +24,7 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
       backgroundColor: theme.colors.dark[4],
       outline: 'none',
     },
+    background: 'radial-gradient(circle, rgba(122,122,122,1) 0%, rgba(65,65,65,1) 85%)', 
   },
   iconImage: {
     maxWidth: 32,
@@ -32,6 +33,7 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
     paddingLeft: 5,
     paddingRight: 12,
     height: '100%',
+    color: "white",
   },
   iconContainer: {
     display: 'flex',
@@ -40,27 +42,28 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
     height: 32,
   },
   icon: {
-    fontSize: 24,
-    color: params.iconColor || theme.colors.dark[2],
+    fontSize: 20,
+    color: 'white',
   },
   label: {
-    color: theme.colors.dark[2],
+    color: "white",
     textTransform: 'uppercase',
-    fontSize: 12,
+    fontSize: 14,
     verticalAlign: 'middle',
   },
   chevronIcon: {
     fontSize: 14,
-    color: theme.colors.dark[2],
+    color: 'white',
   },
   scrollIndexValue: {
-    color: theme.colors.dark[2],
+    color: 'white',
     textTransform: 'uppercase',
     fontSize: 14,
   },
   progressStack: {
     width: '100%',
     marginRight: 5,
+    color: "white",
   },
   progressLabel: {
     verticalAlign: 'middle',
@@ -127,7 +130,7 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
             <Progress
               value={item.progress}
               color={item.colorScheme || 'dark.0'}
-              styles={(theme) => ({ root: { backgroundColor: theme.colors.dark[3] } })}
+              styles={(theme) => ({ root: { backgroundColor: 'theme.colors.dark[3]' } })}
             />
           </Stack>
         ) : (

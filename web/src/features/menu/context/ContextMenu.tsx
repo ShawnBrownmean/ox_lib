@@ -41,7 +41,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     borderRadius: 4,
     flex: '1 85%',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
+    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
   },
   titleText: {
     color: "white",
