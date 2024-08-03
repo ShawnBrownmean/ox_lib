@@ -23,7 +23,7 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     margin: 8,
     color: "lightgray",
     fontFamily: 'Roboto',
-    boxShadow: theme.shadows.sm,
+    boxShadow: theme.shadows.lg,
     backgroundColor: '#252934',
     borderRadius: '3px',
     position: 'relative', // Make the container relative for absolute positioning of the blue dot
