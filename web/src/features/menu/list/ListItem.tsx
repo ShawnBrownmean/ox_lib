@@ -15,16 +15,17 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[5],
+    backgroundColor: 'transparent',
     borderRadius: theme.radius.md,
-    padding: 2,
+    padding: 4,
     height: 60,
     scrollMargin: 8,
     '&:focus': {
-      backgroundColor: theme.colors.dark[4],
+      backgroundColor: 'transparent',
       outline: 'none',
     },
-    background: 'radial-gradient(circle, rgba(122,122,122,1) 0%, rgba(65,65,65,1) 85%)', 
+    border: '1px solid rgb(56, 162, 229)',
+    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 65%)', 
   },
   iconImage: {
     maxWidth: 32,
@@ -129,8 +130,8 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
             <Text className={classes.progressLabel}>{item.label}</Text>
             <Progress
               value={item.progress}
-              color={item.colorScheme || 'dark.0'}
-              styles={(theme) => ({ root: { backgroundColor: 'theme.colors.dark[3]' } })}
+              color={item.colorScheme || 'lightgray'}
+              styles={(theme) => ({ root: { backgroundColor: 'theme.colors.dark[4]' } })}
             />
           </Stack>
         ) : (

@@ -35,7 +35,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     minHeight: '60px',
     '&:hover': {
       backgroundColor: 'black',
-      background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //hovering over box's
+      background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //hovering over 
       cursor: params.readOnly ? 'unset' : 'pointer',
        border: '1px solid rgb(56, 162, 229)'
     },
