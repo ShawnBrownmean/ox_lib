@@ -68,7 +68,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     flex: '1',
   },
   buttonGroup: {
-    gap: 4,
+    gap: 3,
     flexWrap: 'nowrap',
   },
   buttonIconContainer: {
@@ -79,6 +79,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   buttonTitleText: {
     overflowWrap: 'break-word',
+    color: "white"
   },
   buttonArrowContainer: {
     justifyContent: 'center',

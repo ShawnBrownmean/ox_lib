@@ -12,13 +12,13 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { canClose?: boolean }) => ({
   button: {
-    borderRadius: 4, // New style from the second code
-    flex: '1 15%',
+    borderRadius: 5, // New style from the second code
+    flex: '2 15%',
     alignSelf: 'stretch',
     height: 'auto',
     textAlign: 'center',
     justifyContent: 'center',
-    padding: 2,
+    padding: 5,
     backgroundColor: 'transparent', // Retained from the first code
     color: 'white', // Retained from the first code
     textShadow: '0px 0px 100px white', // Retained from the first code
