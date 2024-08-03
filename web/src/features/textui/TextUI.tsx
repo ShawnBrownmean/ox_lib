@@ -7,8 +7,6 @@ import remarkGfm from 'remark-gfm';
 import type { TextUiPosition, TextUiProps } from '../../typings';
 import MarkdownComponents from '../../config/MarkdownComponents';
 import LibIcon from '../../components/LibIcon';
-import { before } from 'node:test';
-
 
 const useStyles = createStyles((theme, params: { position?: TextUiPosition }) => ({
   wrapper: {
@@ -16,21 +14,28 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     width: '100%',
     position: 'absolute',
     display: 'flex',
-    // alignItems: params.position === 'top-center' ? 'baseline' : params.position === 'bottom-center' ? 'end' : 'center',
-    alignItems: 'end',
-    // justifyContent:
-    //   params.position === 'right-center' ? 'flex-end' : params.position === 'left-center' ? 'flex-start' : 'center',
-    justifyContent: 'center',
+    alignItems: 'center', // Align items to the center vertically
+    justifyContent: 'flex-start', // Align items to the left horizontally
   },
   container: {
     fontSize: 16,
     padding: 12,
     margin: 8,
-    color: theme.colors.dark[0],
+    color: "lightgray",
     fontFamily: 'Roboto',
     boxShadow: theme.shadows.sm,
     backgroundColor: '#252934',
     borderRadius: '3px',
+    position: 'relative', // Make the container relative for absolute positioning of the blue dot
+  },
+  blueDot: {
+    position: 'absolute',
+    top: 8,
+    left: 8,
+    width: 8,
+    height: 8,
+    borderRadius: '25%',
+    backgroundColor: '#74C0FC',
   },
 }));
 
@@ -55,7 +60,8 @@ const TextUI: React.FC = () => {
       <Box className={classes.wrapper}>
         <ScaleFade visible={visible}>
           <Box style={data.style} className={classes.container}>
-          <div className="textui-keybind-container">
+            <div className={classes.blueDot}></div>
+            <div className="textui-keybind-container">
               <div className="textui-keybind">
               </div>
               <Box style={data.style} className="textui-container"></Box>
@@ -74,7 +80,7 @@ const TextUI: React.FC = () => {
               {/*<ReactMarkdown components={MarkdownComponents} remarkPlugins={[remarkGfm]}>
                 {data.text}
               </ReactMarkdown>*/}
-              </div>
+            </div>
             <p>{data.text}</p>
           </Box>
         </ScaleFade>
