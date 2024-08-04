@@ -7,15 +7,17 @@ import type { ProgressbarProps } from '../../typings';
 
 const useStyles = createStyles((theme) => ({
   container: {
-    width: 350,
-    height: 45,
-    borderRadius: theme.radius.sm,
-    backgroundColor: theme.colors.dark[5],
+    width: 550,
+    height: 20,
+    borderRadius: theme.radius.lg,
+    backgroundColor: theme.colors.dark[5], //main background bar
+    //background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)', //gray background
+    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //background is ligthgray/blue
     overflow: 'hidden',
   },
   wrapper: {
     width: '100%',
-    height: '20%',
+    height: '15%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,13 +26,14 @@ const useStyles = createStyles((theme) => ({
   },
   bar: {
     height: '100%',
-    backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+    backgroundColor: 'rgb(56, 162, 229)', // bar that show how much u have left 
   },
   labelWrapper: {
     position: 'absolute',
     display: 'flex',
-    width: 350,
-    height: 45,
+    top: 70,
+    width: 550,
+    height: 25,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -40,9 +43,9 @@ const useStyles = createStyles((theme) => ({
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    fontSize: 20,
-    color: theme.colors.gray[3],
-    textShadow: theme.shadows.sm,
+    fontSize: 28,
+    color: 'white',
+    textShadow: theme.shadows.md,
   },
 }));
 
