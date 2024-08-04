@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => ({
   container: {
     position: 'absolute',
     top: '15%',
-    right: '25%',
+    right: '10%',
     width: 320,
     height: 580,
   },
@@ -34,13 +34,14 @@ const useStyles = createStyles((theme) => ({
     color: 'lightgray',
     borderRadius: '5px',
     border: '1px solid lightgray',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
+    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', // header
   },
   titleContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
     flex: '1 85%',
+
   },
   titleText: {
     color: "white",
@@ -99,7 +100,7 @@ const ContextMenu: React.FC = () => {
     className={classes.contextMenu}
     style={{
       background: visible
-        ? 'linear-gradient(90deg, rgba(56, 162, 229,0) 0%,  rgba(24, 72, 102, 1) 90%)'
+        ? 'linear-gradient(90deg, rgba(56, 162, 229,0) 25%,  rgba(0, 0, 0, 1) 100%)'
         : 'transparent',
     }}
   >
