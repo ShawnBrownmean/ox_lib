@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     borderRadius: theme.radius.lg,
     backgroundColor: theme.colors.dark[5], //main background bar
     background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)', //gray background
-    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //background is ligthgray/blue
+   // background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //background is ligthgray/blue
     overflow: 'hidden',
   },
   wrapper: {
