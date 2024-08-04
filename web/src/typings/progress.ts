@@ -8,5 +8,4 @@ export interface CircleProgressbarProps {
 export interface ProgressbarProps {
   label: string;
   duration: number;
-  percent?: boolean;
 }
