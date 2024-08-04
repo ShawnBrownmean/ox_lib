@@ -21,11 +21,11 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     fontSize: 16,
     padding: 12,
     margin: 8,
-    color: "white",
+    color: 'white',
     fontFamily: 'Roboto',
     boxShadow: theme.shadows.xl,
     backgroundColor: '#252934',
-    background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)', //main 
+    background:  'radial-gradient(ellipse, rgba(56, 100, 130, 1) 0%, rgba(65, 65, 65, 1) 85%)', //main  //122, 122, 122= gray  65, 65, 65 =dark gray
     borderRadius: '1px',
     position: 'relative', // Make the container relative for absolute positioning of the blue dot
   },
