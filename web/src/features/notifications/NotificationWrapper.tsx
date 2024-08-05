@@ -203,7 +203,7 @@ const Notifications: React.FC = () => {
                 ? 'rgb(29, 94, 63)'
                 : data.type === 'warning'
                 ? 'rgb(135, 135, 16)'
-                : 'rgb(31, 90, 128)',
+                : 'rgb(255, 255, 255)',
           }}
           className={`${classes.container}`}
         >
@@ -219,7 +219,7 @@ const Notifications: React.FC = () => {
                         ? 'teal'
                         : data.type === 'warning'
                         ? 'yellow'
-                        : 'blue'
+                        : 'white'
                     }
                     style={{
                       alignSelf: !data.alignIcon || data.alignIcon === 'center' ? 'center' : 'start',

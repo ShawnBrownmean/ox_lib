@@ -36,8 +36,8 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
       position: 'absolute',
       top: 2.5,
       left: 2.5,
-      width: '20px', // Adjust as needed
-      height: '20px', // Adjust as needed
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
       borderTop: '4px solid #74C0FC', // Adjust color and size as needed
       borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
       borderRadius: '2px', // Optional, adjust as needed
@@ -47,8 +47,8 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
       position: 'absolute',
       bottom: 2.5,
       right: 2.5,
-      width: '20px', // Adjust as needed
-      height: '20px', // Adjust as needed
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
       borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
       borderRight: '4px solid #74C0FC', // Adjust color and size as needed
       borderRadius: '1px', // Optional, adjust as needed

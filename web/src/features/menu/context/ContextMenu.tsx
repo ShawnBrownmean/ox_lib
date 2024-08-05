@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
   container: {
     position: 'absolute',
     top: '15%',
-    right: '16%',
+    right: '15%',
     width: 320,
     height: 580,
   
