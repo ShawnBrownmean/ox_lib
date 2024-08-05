@@ -100,7 +100,7 @@ const ContextMenu: React.FC = () => {
     className={classes.contextMenu}
     style={{
       background: visible
-        ? 'linear-gradient(90deg, rgba(56, 162, 229,0) 25%,  rgba(0, 0, 0, 1) 100%)'
+        ?  'linear-gradient(90deg, rgba(56, 162, 229,0) 65%,  rgba(24, 72, 102, 1) 100%)'
         : 'transparent',
     }}
   >

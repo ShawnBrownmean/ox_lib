@@ -9,8 +9,8 @@ const useStyles = createStyles((theme) => ({
   container: {
     width: 550,
     height: 20,
-    borderRadius: theme.radius.lg,
-    backgroundColor: theme.colors.dark[5], //main background bar
+    borderRadius: theme.radius.md,
+    backgroundColor: theme.colors.dark[4], //main background bar
     background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)', //gray background
    // background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //background is ligthgray/blue
     overflow: 'hidden',
@@ -33,19 +33,19 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     top: 70,
     width: 550,
-    height: 25,
+    height: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
   label: {
     maxWidth: 350,
-    padding: 8,
+    padding: 6,
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    fontSize: 28,
+    fontSize: 25,
     color: 'white',
-    textShadow: theme.shadows.md,
+    textShadow: theme.shadows.lg,
   },
 }));
 
