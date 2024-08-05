@@ -14,15 +14,10 @@ const openMenu = (id: string | undefined) => {
 };
 
 const useStyles = createStyles((theme) => ({
-  contextMenu: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-  },
   container: {
     position: 'absolute',
     top: '15%',
-    right: '16%',
+    right: '25%',
     width: 320,
     height: 580,
   },
@@ -31,20 +26,14 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     marginBottom: 10,
     gap: 6,
-    color: 'lightgray',
-    borderRadius: '5px',
-    border: '1px solid lightgray',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', // header
   },
   titleContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
     borderRadius: 4,
     flex: '1 85%',
-
+    backgroundColor: theme.colors.dark[6],
   },
   titleText: {
-    color: "white",
+    color: theme.colors.dark[0],
     padding: 6,
     textAlign: 'center',
   },
@@ -96,14 +85,6 @@ const ContextMenu: React.FC = () => {
   });
 
   return (
-    <div
-    className={classes.contextMenu}
-    style={{
-      background: visible
-        ?  'linear-gradient(90deg, rgba(56, 162, 229,0) 65%,  rgba(24, 72, 102, 1) 100%)'
-        : 'transparent',
-    }}
-  >
     <Box className={classes.container}>
       <ScaleFade visible={visible}>
         <Flex className={classes.header}>
@@ -126,7 +107,6 @@ const ContextMenu: React.FC = () => {
         </Box>
       </ScaleFade>
     </Box>
-    </div>
   );
 };
 

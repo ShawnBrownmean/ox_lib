@@ -21,56 +21,42 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   label: {
     width: '100%',
-    color: params.disabled ? 'white' : "white",
+    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[0],
     whiteSpace: 'pre-wrap',
   },
   button: {
     height: 'fit-content',
     width: '100%',
     padding: 10,
-    //background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', 
-    background:  'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)', //main 
-    border: '1px solid lightgray',
-    borderRadius: '5px',
-    minHeight: '60px',
     '&:hover': {
-      backgroundColor: 'black',
-      background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)', //hovering over 
+      backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
       cursor: params.readOnly ? 'unset' : 'pointer',
-       border: '1px solid rgb(56, 162, 229)'
     },
     '&:active': {
       transform: params.readOnly ? 'unset' : undefined,
     },
   },
-  disabled: {
-    backgroundColor: 'black',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)',
-    border: '1px solid rgb(56, 162, 229)',
-  },
   iconImage: {
     maxWidth: '25px',
   },
   description: {
-    color: "white",
+    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[2],
     fontSize: 12,
   },
   dropdown: {
     padding: 10,
-    color: "white",
+    color: theme.colors.dark[0],
     fontSize: 14,
     maxWidth: 256,
     width: 'fit-content',
-    backgroundColor: 'black',
-    background: 'radial-gradient(ellipse, rgba(122, 122, 122, 1) 0%, rgba(65, 65, 65, 1) 85%)',
-    border: '1px solid rgb(56, 162, 229)',
+    border: 'none',
   },
   buttonStack: {
     gap: 4,
     flex: '1',
   },
   buttonGroup: {
-    gap: 3,
+    gap: 4,
     flexWrap: 'nowrap',
   },
   buttonIconContainer: {
@@ -81,16 +67,12 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   buttonTitleText: {
     overflowWrap: 'break-word',
-    color: "white"
   },
   buttonArrowContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     width: 25,
     height: 25,
-    color: '#38a2e5',
-    textShadow: '0px 0px 10px rgba(56,162,229,0.6)',
-    fontSize: 26,
   },
 }));
 
@@ -120,13 +102,6 @@ const ContextButton: React.FC<{
             }
             variant="default"
             disabled={button.disabled}
-            style={{
-              background: button.disabled
-                ? 'radial-gradient(ellipse, rgba(122, 122, 122, 0.9) 0%, rgba(148, 148, 148, 0.5) 85%)'
-                : undefined,
-              //border: button.disabled ? '1px solid #f72f49' : undefined,
-              backgroundColor: button.disabled ? 'black' : undefined,
-            }}
           >
             <Group position="apart" w="100%" noWrap>
               <Stack className={classes.buttonStack}>
@@ -158,7 +133,7 @@ const ContextButton: React.FC<{
                   </Text>
                 )}
                 {button.progress !== undefined && (
-                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'blue'} />
+                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'dark.3'} />
                 )}
               </Stack>
               {(button.menu || button.arrow) && button.arrow !== false && (
@@ -186,7 +161,7 @@ const ContextButton: React.FC<{
                     <Progress
                       value={metadata.progress}
                       size="sm"
-                      color={metadata.colorScheme || button.colorScheme || 'white'}
+                      color={metadata.colorScheme || button.colorScheme || 'dark.3'}
                     />
                   )}
                 </>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, createStyles } from '@mantine/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import LibIcon from '../../../../components/LibIcon';
@@ -12,20 +11,13 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { canClose?: boolean }) => ({
   button: {
-    borderRadius: 5, // New style from the second code
-    flex: '2 15%',
+    borderRadius: 4,
+    flex: '1 15%',
     alignSelf: 'stretch',
     height: 'auto',
     textAlign: 'center',
     justifyContent: 'center',
-    padding: 5,
-    backgroundColor: 'transparent', // Retained from the first code
-    color: 'white', // Retained from the first code
-    textShadow: '0px 0px 100px white', // Retained from the first code
-    transition: 'all .2s ease', // Retained from the first code
-    '&:hover': {
-      backgroundColor: '#f72f49', // Retained from the first code
-    },
+    padding: 2,
   },
   root: {
     border: 'none',

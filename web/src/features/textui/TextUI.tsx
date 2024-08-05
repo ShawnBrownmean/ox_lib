@@ -14,30 +14,22 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     width: '100%',
     position: 'absolute',
     display: 'flex',
-    alignItems: 'center', // Align items to the center vertically
-    justifyContent: 'flex-start', // Align items to the left horizontally
+    alignItems: 
+      params.position === 'top-center' ? 'baseline' :
+      params.position === 'bottom-center' ? 'flex-end' : 'center',
+    justifyContent: 
+      params.position === 'right-center' ? 'flex-end' :
+      params.position === 'left-center' ? 'flex-start' : 'center',
   },
   container: {
     fontSize: 16,
     padding: 12,
     margin: 8,
-    color: 'white',
+    backgroundColor: theme.colors.dark[6],
+    color: theme.colors.dark[0],
     fontFamily: 'Roboto',
-    boxShadow: theme.shadows.xl,
-    backgroundColor: '#34363d',
-    //background:  'radial-gradient(ellipse, rgba(, 1) 0%, rgba(65, 65, 65, 1) 85%)', //main  //122, 122, 122= gray  65, 65, 65 =dark gray
-    borderRadius: '1px',
-    position: 'relative', // Make the container relative for absolute positioning of the blue dot
-  },
-  blueDot: {
-    position: 'absolute',
-    top: 4,
-    left: 4,
-    width: 6,
-    height: 6,
-    border: '1px lightgray',
-    borderRadius: '25%',
-    backgroundColor: '#74C0FC',
+    borderRadius: theme.radius.sm,
+    boxShadow: theme.shadows.sm,
   },
 }));
 
@@ -50,7 +42,7 @@ const TextUI: React.FC = () => {
   const { classes } = useStyles({ position: data.position });
 
   useNuiEvent<TextUiProps>('textUi', (data) => {
-    //if (!data.position) data.position = 'right-center'; // Default right position
+    if (!data.position) data.position = 'right-center'; // Default right position
     setData(data);
     setVisible(true);
   });
@@ -62,12 +54,8 @@ const TextUI: React.FC = () => {
       <Box className={classes.wrapper}>
         <ScaleFade visible={visible}>
           <Box style={data.style} className={classes.container}>
-            <div className={classes.blueDot}></div>
-            <div className="textui-keybind-container">
-              <div className="textui-keybind">
-              </div>
-              <Box style={data.style} className="textui-container"></Box>
-              {/*data.icon && (
+            <Group spacing={12}>
+              {data.icon && (
                 <LibIcon
                   icon={data.icon}
                   fixedWidth
@@ -78,12 +66,11 @@ const TextUI: React.FC = () => {
                     alignSelf: !data.alignIcon || data.alignIcon === 'center' ? 'center' : 'start',
                   }}
                 />
-              )*/}
-              {/*<ReactMarkdown components={MarkdownComponents} remarkPlugins={[remarkGfm]}>
+              )}
+              <ReactMarkdown components={MarkdownComponents} remarkPlugins={[remarkGfm]}>
                 {data.text}
-              </ReactMarkdown>*/}
-            </div>
-            <p>{data.text}</p>
+              </ReactMarkdown>
+            </Group>
           </Box>
         </ScaleFade>
       </Box>
