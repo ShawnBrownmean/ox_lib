@@ -16,7 +16,7 @@ interface Props {
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
     backgroundColor: theme.colors.dark[6],
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.sm,
     padding: 2,
     height: 60,
     scrollMargin: 8,
@@ -41,20 +41,20 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   },
   icon: {
     fontSize: 24,
-    color: params.iconColor || theme.colors.dark[2],
+    color: params.iconColor || theme.colors.gray[1],
   },
   label: {
-    color: theme.colors.dark[2],
+    color: theme.colors.gray[1],
     textTransform: 'uppercase',
     fontSize: 12,
     verticalAlign: 'middle',
   },
   chevronIcon: {
     fontSize: 14,
-    color: theme.colors.dark[2],
+    color: theme.colors.gray[1],
   },
   scrollIndexValue: {
-    color: theme.colors.dark[2],
+    color: theme.colors.gray[1],
     textTransform: 'uppercase',
     fontSize: 14,
   },

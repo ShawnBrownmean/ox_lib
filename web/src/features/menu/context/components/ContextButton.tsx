@@ -21,7 +21,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   label: {
     width: '100%',
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[0],
+    color: params.disabled ? theme.colors.dark[3] : theme.colors.gray[1],
     whiteSpace: 'pre-wrap',
   },
   button: {
@@ -40,7 +40,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     maxWidth: '25px',
   },
   description: {
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[2],
+    color:' params.disabled ? theme.colors.dark[3] : theme.colors.dark[2]',
     fontSize: 12,
   },
   dropdown: {

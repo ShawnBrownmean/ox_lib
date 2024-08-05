@@ -22,14 +22,37 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
       params.position === 'left-center' ? 'flex-start' : 'center',
   },
   container: {
-    fontSize: 16,
+    position: 'relative', // Ensure pseudo-elements are positioned correctly
+    fontSize: 25,
     padding: 12,
     margin: 8,
     backgroundColor: theme.colors.dark[6],
-    color: theme.colors.dark[0],
+    color: 'white',
     fontFamily: 'Roboto',
     borderRadius: theme.radius.sm,
     boxShadow: theme.shadows.sm,
+    '::before': {
+      content: '""',
+      position: 'absolute',
+      top: 2.5,
+      left: 2.5,
+      width: '20px', // Adjust as needed
+      height: '20px', // Adjust as needed
+      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '2px', // Optional, adjust as needed
+    },
+    '::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 2.5,
+      right: 2.5,
+      width: '20px', // Adjust as needed
+      height: '20px', // Adjust as needed
+      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
   },
 }));
 

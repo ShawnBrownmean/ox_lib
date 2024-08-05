@@ -41,12 +41,13 @@ const useStyles = createStyles((theme, params: { position?: MenuPosition; itemCo
   scrollArrow: {
     backgroundColor: theme.colors.dark[8],
     textAlign: 'center',
-    borderBottomLeftRadius: theme.radius.md,
-    borderBottomRightRadius: theme.radius.md,
-    height: 25,
+    borderBottomLeftRadius: theme.radius.sm,
+    borderBottomRightRadius: theme.radius.sm,
+    height: 30,
+    
   },
   scrollArrowIcon: {
-    color: theme.colors.dark[2],
+    color: theme.colors.gray[2],
     fontSize: 20,
   },
 }));

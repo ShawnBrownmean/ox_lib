@@ -4,8 +4,8 @@ import React from 'react';
 const useStyles = createStyles((theme) => ({
   container: {
     textAlign: 'center',
-    borderTopLeftRadius: theme.radius.md,
-    borderTopRightRadius: theme.radius.md,
+    borderTopLeftRadius: theme.radius.sm,
+    borderTopRightRadius: theme.radius.sm,
     backgroundColor: theme.colors.dark[6],
     height: 60,
     width: 384,
@@ -17,6 +17,28 @@ const useStyles = createStyles((theme) => ({
     fontSize: 24,
     textTransform: 'uppercase',
     fontWeight: 500,
+    '::before': {
+      content: '""',
+      position: 'absolute',
+      top: 2.5,
+      left: 2.5,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
+    '::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 2.5,
+      right: 2.5,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
   },
 }));
 

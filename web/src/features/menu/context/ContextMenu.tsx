@@ -20,20 +20,43 @@ const useStyles = createStyles((theme) => ({
     right: '25%',
     width: 320,
     height: 580,
+  
   },
   header: {
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
     gap: 6,
+    '::before': {
+      content: '""',
+      position: 'absolute',
+      top: 2.5,
+      left: 2.5,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
+    '::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 546,
+      right: 56,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
   },
   titleContainer: {
-    borderRadius: 4,
+    borderRadius: 2,
     flex: '1 85%',
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: theme.colors.dark[5], //header
   },
   titleText: {
-    color: theme.colors.dark[0],
+    color: 'white',
     padding: 6,
     textAlign: 'center',
   },
