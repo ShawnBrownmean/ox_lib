@@ -23,7 +23,7 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
   },
   container: {
     position: 'relative', // Ensure pseudo-elements are positioned correctly
-    fontSize: 25,
+    fontSize: 15,
     padding: 12,
     margin: 8,
     backgroundColor: theme.colors.dark[6],
