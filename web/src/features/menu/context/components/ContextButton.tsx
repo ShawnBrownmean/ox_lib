@@ -35,13 +35,36 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     '&:active': {
       transform: params.readOnly ? 'unset' : undefined,
     },
+    '::before': {
+      content: '""',
+      position: 'absolute',
+      top: 2.5,
+      left: 2.5,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
+    '::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 2.5,
+      right: 2.5,
+      width: '15px', // Adjust as needed
+      height: '15px', // Adjust as needed
+      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
+    },
   },
   iconImage: {
     maxWidth: '25px',
   },
   description: {
-    color:' params.disabled ? theme.colors.dark[3] : theme.colors.dark[2]',
+    color:'params.disabled ? theme.colors.dark[3] : theme.colors.dark[2]',
     fontSize: 12,
+    color:'#74C0FC',
   },
   dropdown: {
     padding: 10,
@@ -160,7 +183,7 @@ const ContextButton: React.FC<{
                   {typeof metadata === 'object' && metadata.progress !== undefined && (
                     <Progress
                       value={metadata.progress}
-                      size="sm"
+                      size="md"
                       color={metadata.colorScheme || button.colorScheme || 'dark.3'}
                     />
                   )}
