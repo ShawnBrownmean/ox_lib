@@ -32,10 +32,10 @@ const useStyles = createStyles((theme) => ({
       position: 'absolute',
       top: 2.5,
       left: 2.5,
-      width: '15px', // Adjust as needed
-      height: '15px', // Adjust as needed
-      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
-      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
+      width: '5px', // Adjust as needed
+      height: '5px', // Adjust as needed
+      borderTop: '2px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '2px solid #74C0FC', // Adjust color and size as needed
       borderRadius: '1px', // Optional, adjust as needed
     },
     '::after': {
@@ -43,10 +43,10 @@ const useStyles = createStyles((theme) => ({
       position: 'absolute',
       bottom: 546,
       right: 56,
-      width: '15px', // Adjust as needed
-      height: '15px', // Adjust as needed
-      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
-      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
+      width: '5px', // Adjust as needed
+      height: '5px', // Adjust as needed
+      borderBottom: '2px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '2px solid #74C0FC', // Adjust color and size as needed
       borderRadius: '1px', // Optional, adjust as needed
     },
   },

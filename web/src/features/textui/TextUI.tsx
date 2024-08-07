@@ -36,22 +36,22 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
       position: 'absolute',
       top: 2.5,
       left: 2.5,
-      width: '15px', // Adjust as needed
-      height: '15px', // Adjust as needed
-      borderTop: '4px solid #74C0FC', // Adjust color and size as needed
-      borderLeft: '4px solid #74C0FC', // Adjust color and size as needed
-      borderRadius: '2px', // Optional, adjust as needed
+      width: '7px', // Adjust as needed
+      height: '7px', // Adjust as needed
+      borderTop: '2px solid #74C0FC', // Adjust color and size as needed
+      borderLeft: '2px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '1px', // Optional, adjust as needed
     },
     '::after': {
       content: '""',
       position: 'absolute',
       bottom: 2.5,
       right: 2.5,
-      width: '15px', // Adjust as needed
-      height: '15px', // Adjust as needed
-      borderBottom: '4px solid #74C0FC', // Adjust color and size as needed
-      borderRight: '4px solid #74C0FC', // Adjust color and size as needed
-      borderRadius: '1px', // Optional, adjust as needed
+      width: '7px', // Adjust as needed
+      height: '7px', // Adjust as needed
+      borderBottom: '2px solid #74C0FC', // Adjust color and size as needed
+      borderRight: '2px solid #74C0FC', // Adjust color and size as needed
+      borderRadius: '2x', // Optional, adjust as needed
     },
   },
 }));
