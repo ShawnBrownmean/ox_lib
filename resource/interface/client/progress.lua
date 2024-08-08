@@ -175,7 +175,7 @@ function lib.progressCircle(data)
             action = 'circleProgress',
             data = {
                 duration = data.duration,
-                position = data.position,
+                position = 'bottom',
                 label = data.label
             }
         })
