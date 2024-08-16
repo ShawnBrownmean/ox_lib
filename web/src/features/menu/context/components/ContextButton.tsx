@@ -31,11 +31,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     '&:hover': {
       backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
       cursor: params.readOnly ? 'unset' : 'pointer',
-    },
-    '&:active': {
-      transform: params.readOnly ? 'unset' : undefined,
-    },
-    '::before': {
+      '::before': {
       content: '""',
       position: 'absolute',
       top: 2.5,
@@ -57,12 +53,16 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
       borderRight: '2px solid #74C0FC', // Adjust color and size as needed
       borderRadius: '1px', // Optional, adjust as needed
     },
+    },
+    '&:active': {
+      transform: params.readOnly ? 'unset' : undefined,
+    },
   },
   iconImage: {
     maxWidth: '25px',
   },
   description: {
-    color:'params.disabled ? theme.colors.dark[3] : theme.colors.dark[2]',
+    //color:'params.disabled ? theme.colors.dark[3] : theme.colors.dark[2]',
     fontSize: 12,
     color:'#74C0FC',
   },
