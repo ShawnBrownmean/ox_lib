@@ -6,7 +6,7 @@ export const debugProgressbar = () => {
     {
       action: 'progress',
       data: {
-        label: 'Using Lockpick',
+        label: 'Consuming Food Fries',
         duration: 8000,
       },
     },

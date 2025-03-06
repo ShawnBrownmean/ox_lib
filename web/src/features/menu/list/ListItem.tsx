@@ -15,18 +15,49 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'rgba(17, 24, 39, 0.8)',
+    backdropFilter: 'blur(4px)',
     borderRadius: theme.radius.sm,
     padding: 2,
     height: 60,
     scrollMargin: 8,
+    border: '1px solid rgba(116, 192, 252, 0.1)',
+    transition: 'all 0.2s ease',
+    position: 'relative',
     '&:focus': {
-      backgroundColor: theme.colors.dark[4],
+      backgroundColor: 'rgba(23, 32, 52, 0.95)',
       outline: 'none',
+      borderColor: 'rgba(116, 192, 252, 0.3)',
+      transform: 'translateY(-1px)',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
     },
-  },
-  iconImage: {
-    maxWidth: 32,
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 2,
+      left: 2,
+      width: '6px',
+      height: '6px',
+      borderTop: '2px solid #74C0FC',
+      borderLeft: '2px solid #74C0FC',
+      opacity: 0.6,
+      transition: 'opacity 0.2s ease',
+    },
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: 2,
+      right: 2,
+      width: '6px',
+      height: '6px',
+      borderBottom: '2px solid #74C0FC',
+      borderRight: '2px solid #74C0FC',
+      opacity: 0.6,
+      transition: 'opacity 0.2s ease',
+    },
+    '&:hover::before, &:hover::after, &:focus::before, &:focus::after': {
+      opacity: 1,
+    },
   },
   buttonWrapper: {
     paddingLeft: 5,
@@ -36,22 +67,40 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   iconContainer: {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     width: 32,
     height: 32,
+    backgroundColor: 'rgba(116, 192, 252, 0.1)',
+    borderRadius: '6px',
+    transition: 'all 0.2s ease',
+    border: '1px solid rgba(116, 192, 252, 0.1)',
+  },
+  iconImage: {
+    maxWidth: 32,
+    borderRadius: 4,
   },
   icon: {
     fontSize: 24,
-    color: params.iconColor || theme.colors.gray[1],
+    color: params.iconColor || '#74C0FC',
+    transition: 'transform 0.2s ease',
   },
   label: {
     color: theme.colors.gray[1],
     textTransform: 'uppercase',
     fontSize: 12,
     verticalAlign: 'middle',
+    fontWeight: 500,
+    letterSpacing: '0.02em',
+  },
+  value: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 500,
   },
   chevronIcon: {
     fontSize: 14,
-    color: theme.colors.gray[1],
+    color: '#74C0FC',
+    opacity: 0.8,
   },
   scrollIndexValue: {
     color: theme.colors.gray[1],
@@ -65,6 +114,17 @@ const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   progressLabel: {
     verticalAlign: 'middle',
     marginBottom: 3,
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: 500,
+  },
+  progress: {
+    '& .mantine-Progress-root': {
+      backgroundColor: 'rgba(116, 192, 252, 0.1)',
+    },
+    '& .mantine-Progress-bar': {
+      background: 'linear-gradient(90deg, rgba(116, 192, 252, 0.8) 0%, rgba(116, 192, 252, 1) 100%)',
+    },
   },
 }));
 
@@ -97,7 +157,7 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
             )}
           </Box>
         )}
-        {Array.isArray(item.values) ? (
+          {Array.isArray(item.values) ? (
           <Group position="apart" w="100%">
             <Stack spacing={0} justify="space-between">
               <Text className={classes.label}>{item.label}</Text>
@@ -118,20 +178,21 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
           </Group>
         ) : item.checked !== undefined ? (
           <Group position="apart" w="100%">
-            <Text>{item.label}</Text>
-            <CustomCheckbox checked={checked}></CustomCheckbox>
+            <Text className={classes.label}>{item.label}</Text>
+            <CustomCheckbox checked={checked} />
           </Group>
         ) : item.progress !== undefined ? (
           <Stack className={classes.progressStack} spacing={0}>
             <Text className={classes.progressLabel}>{item.label}</Text>
             <Progress
               value={item.progress}
-              color={item.colorScheme || 'dark.0'}
-              styles={(theme) => ({ root: { backgroundColor: theme.colors.dark[3] } })}
+              size="sm"
+              color={item.colorScheme || '#74C0FC'}
+              className={classes.progress}
             />
           </Stack>
         ) : (
-          <Text>{item.label}</Text>
+          <Text className={classes.label}>{item.label}</Text>
         )}
       </Group>
     </Box>

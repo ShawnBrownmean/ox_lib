@@ -22,36 +22,89 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
       params.position === 'left-center' ? 'flex-start' : 'center',
   },
   container: {
-    position: 'relative', // Ensure pseudo-elements are positioned correctly
+    position: 'relative',
     fontSize: 15,
-    padding: 12,
+    padding: '12px 16px',
     margin: 8,
-    backgroundColor: theme.colors.dark[6],
-    color: 'white',
+    backgroundColor: 'rgba(17, 24, 39, 0.8)',
+    backdropFilter: 'blur(4px)',
+    color: '#fff',
     fontFamily: 'Roboto',
     borderRadius: theme.radius.sm,
-    boxShadow: theme.shadows.sm,
-    '::before': {
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+    border: '1px solid rgba(116, 192, 252, 0.15)',
+    transition: 'all 0.2s ease',
+    minWidth: 200,
+    maxWidth: 400,
+    '&::before': {
       content: '""',
       position: 'absolute',
-      top: 2.5,
-      left: 2.5,
-      width: '7px', // Adjust as needed
-      height: '7px', // Adjust as needed
-      borderTop: '2px solid #74C0FC', // Adjust color and size as needed
-      borderLeft: '2px solid #74C0FC', // Adjust color and size as needed
-      borderRadius: '1px', // Optional, adjust as needed
+      top: 3,
+      left: 3,
+      width: '6px',
+      height: '6px',
+      borderTop: '2px solid #74C0FC',
+      borderLeft: '2px solid #74C0FC',
+      opacity: 0.8,
+      transition: 'opacity 0.2s ease',
     },
-    '::after': {
+    '&::after': {
       content: '""',
       position: 'absolute',
-      bottom: 2.5,
-      right: 2.5,
-      width: '7px', // Adjust as needed
-      height: '7px', // Adjust as needed
-      borderBottom: '2px solid #74C0FC', // Adjust color and size as needed
-      borderRight: '2px solid #74C0FC', // Adjust color and size as needed
-      borderRadius: '2x', // Optional, adjust as needed
+      bottom: 3,
+      right: 3,
+      width: '6px',
+      height: '6px',
+      borderBottom: '2px solid #74C0FC',
+      borderRight: '2px solid #74C0FC',
+      opacity: 0.8,
+      transition: 'opacity 0.2s ease',
+    },
+  },
+  content: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+  },
+  icon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 32,
+    height: 32,
+    backgroundColor: 'rgba(116, 192, 252, 0.1)',
+    borderRadius: '6px',
+    transition: 'all 0.2s ease',
+    border: '1px solid rgba(116, 192, 252, 0.1)',
+    '&:hover': {
+      backgroundColor: 'rgba(116, 192, 252, 0.15)',
+      borderColor: 'rgba(116, 192, 252, 0.25)',
+    },
+  },
+  text: {
+    flex: 1,
+    lineHeight: 1.4,
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 500,
+    letterSpacing: '0.02em',
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+    '& p': {
+      margin: 0,
+    },
+    '& code': {
+      backgroundColor: 'rgba(116, 192, 252, 0.1)',
+      padding: '2px 6px',
+      borderRadius: 4,
+      fontSize: '0.9em',
+      color: '#74C0FC',
+    },
+    '& a': {
+      color: '#74C0FC',
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
     },
   },
 }));
@@ -65,7 +118,7 @@ const TextUI: React.FC = () => {
   const { classes } = useStyles({ position: data.position });
 
   useNuiEvent<TextUiProps>('textUi', (data) => {
-    if (!data.position) data.position = 'right-center'; // Default right position
+    if (!data.position) data.position = 'right-center';
     setData(data);
     setVisible(true);
   });
@@ -73,31 +126,33 @@ const TextUI: React.FC = () => {
   useNuiEvent('textUiHide', () => setVisible(false));
 
   return (
-    <>
-      <Box className={classes.wrapper}>
-        <ScaleFade visible={visible}>
-          <Box style={data.style} className={classes.container}>
-            <Group spacing={12}>
-              {data.icon && (
+    <Box className={classes.wrapper}>
+      <ScaleFade visible={visible}>
+        <Box style={data.style} className={classes.container}>
+          <Group className={classes.content}>
+            {data.icon && (
+              <Box className={classes.icon}>
                 <LibIcon
                   icon={data.icon}
                   fixedWidth
                   size="lg"
                   animation={data.iconAnimation}
                   style={{
-                    color: data.iconColor,
+                    color: data.iconColor || '#74C0FC',
                     alignSelf: !data.alignIcon || data.alignIcon === 'center' ? 'center' : 'start',
                   }}
                 />
-              )}
+              </Box>
+            )}
+            <Box className={classes.text}>
               <ReactMarkdown components={MarkdownComponents} remarkPlugins={[remarkGfm]}>
                 {data.text}
               </ReactMarkdown>
-            </Group>
-          </Box>
-        </ScaleFade>
-      </Box>
-    </>
+            </Box>
+          </Group>
+        </Box>
+      </ScaleFade>
+    </Box>
   );
 };
 
